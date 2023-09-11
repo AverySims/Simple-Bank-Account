@@ -27,6 +27,12 @@ public class BankAccount
 
 	public List<string> History { get; private set; } = new List<string>();
 
+	/// <summary>
+	/// Deposits the specified amount to the specified account.
+	/// </summary>
+	/// <param name="addition">The amount to add to the account</param>
+	/// <param name="account">The account to add the amount</param>
+	/// <returns></returns>
 	public static bool DepositToAccount(double addition, BankAccount account)
 	{
 		// cannot add 0 or less to the balance
@@ -37,6 +43,12 @@ public class BankAccount
 		return true;
 	}
 
+	/// <summary>
+	/// Withdraws the specified amount from the specified account.
+	/// </summary>
+	/// <param name="subtraction">The amount to remove from the account</param>
+	/// <param name="account">The account to remove the amount from</param>
+	/// <returns></returns>
 	public static bool WithdrawFromAccount(double subtraction, BankAccount account)
 	{
 		// cannot subtract 0 or less from the balance
@@ -48,6 +60,11 @@ public class BankAccount
 		return true;
 	}
 
+	/// <summary>
+	/// Prints the transaction history of the specified account.
+	/// </summary>
+	/// <param name="history">The specified bank account's history</param>
+	/// <param name="max">The amount of entries to print</param>
 	public static void PrintTransactionHistory(List<string> history, int max = 0)
 	{
 		// reversing the list so we can print last -> first
